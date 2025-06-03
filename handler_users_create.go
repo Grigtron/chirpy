@@ -13,7 +13,7 @@ import (
 type User struct {
 	ID        uuid.UUID  `json:"id"`
 	CreatedAt time.Time  `json:"created_at"`
-	UpdateAt  time.Time  `json:"updated_at"`
+	UpdatedAt  time.Time  `json:"updated_at"`
 	Email     string     `json:"email"`
 	Password  string     `json:"-"`
 }
@@ -55,7 +55,7 @@ func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) 
 		User: User{
 			ID: user.ID,
 			CreatedAt: user.CreatedAt,
-			UpdateAt: user.UpdatedAt,
+			UpdatedAt: user.UpdatedAt,
 			Email: user.Email,
 		},
 	})
